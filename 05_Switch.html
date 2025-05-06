@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+
+// Switch statement
+        let letter = prompt("Enter a letter [A-C]"); // Example day (1-7)
+
+        switch (letter) {
+            case 'A':
+            case 'a':
+                document.getElementById("output").innerHTML += "<br>Letter A";
+                break;
+            case 'B':
+            case 'b':
+                document.getElementById("output").innerHTML += "<br>Letter B";
+                break;
+            case 'C':
+            case 'c':
+                document.getElementById("output").innerHTML += "<br>Letter C";
+                break;
+            default:
+                document.getElementById("output").innerHTML += "<br>Invalid letter";
+        }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables</title>
+</head>
+<body>
+    <div id="test2" class="test2">Test 2</div>
+    <div id="test3" class="test3">Test 3</div>
+    <div id="test4" class="test3">Test 4</div>
+    <script>
+        let name="John Doe"; // String variable
+        let age=25; // numeric variable
+        let height=5.9; // Float variable
+        let isEmployed=false; // Boolean variable
+        let skills=["JavaScript", "HTML", "CSS"]; // Array variable 
+        let person={
+            firstName:"John",
+            lastName:"Doe",
+            age:25,
+            isEmployed:true
+        }; // Object variable
+        let emptyValue=""; // Empty string variable
+        let bigNumber=12345678901234567890n; // BigInt variable
+        let symbolValue=Symbol("unique"); // Symbol variable
+        let dateValue=new Date(); // Date object variable
+        let regexValue=/\d+/; // Regular expression variable
+        let undefinedValue; // Undefined variable
+        let nullValue=null; // Null variable
+        let isStudent=true; // Boolean variable
+        let hobbies=["reading", "writing", "coding"];
+        let address={
+            street:"123 Main St",
+            city:"New York",
+            state:"NY"
+        };
+
+        const PI=3.14; // Constant variable
+        const MAX_VALUE=100; // Constant variable
+        const MIN_VALUE=0; // Constant variable 
+
+       document.getElementById("test2").innerHTML = "Hello, " + name + "! You are " + age + " years old. Your height is " + height + " feet. Are you employed? " + isEmployed + ". Your skills are: " + skills.join(", ") + ". Your address is: " + address.street + ", " + address.city + ", " + address.state + "."; // This changes the content of the div with id "test2"  
+
+        isEmployed = true; // Reassigning the value of isEmployed variable
+        age = 30; // Reassigning the value of age variable
+
+        
+document.getElementById("test3").innerHTML += "Hello, " + name + "! You are " + age + " years old. Your height is " + height + " feet. Are you employed? " + isEmployed + ". Your skills are: " + skills.join(", ") + ". Your address is: " + address.street + ", " + address.city + ", " + address.state + "."; // This changes the content of the div with id "test2"  
+
+ // PI=MAX_VALUE; // Cannot Reassign CONSTANT variable, will throw an error
+document.getElementById("test4").innerHTML += "Pi Value is, " + PI//
+
+
+    </script>
+    
+</body>
+</html>

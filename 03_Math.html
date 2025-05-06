@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATH</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        let operand1 = 5;
+        let operand2 = 3; 
+        let result = operand1 + operand2; // Addition
+        let output = document.getElementById("output");
+        output.innerHTML = `The result of adding ${operand1} and ${operand2} is: ${result}`;
+        // You can also perform other operations like subtraction, multiplication, and division
+
+        let subtraction = operand1 - operand2; // Subtraction
+        let multiplication = operand1 * operand2; // Multiplication
+        let division = operand1 / operand2; // Division
+
+
+        output.innerHTML += `<br>Subtraction: ${subtraction}`;
+        output.innerHTML += `<br>Multiplication: ${multiplication}`;
+        output.innerHTML += `<br>Division: ${division}`;
+        // You can also use Math functions like Math.sqrt(), Math.pow(), etc.
+        let squareRoot = Math.sqrt(operand1); // Square root
+        let power = Math.pow(operand1, operand2); // Power
+        output.innerHTML += `<br>Square root of ${operand1} is: ${squareRoot}`;
+        output.innerHTML += `<br>${operand1} raised to the power of ${operand2} is: ${power}`;
+        // You can also use Math.random() to generate random numbers
+        let randomNumber = Math.random(); // Random number between 0 and 1
+        output.innerHTML += `<br>Random number between 0 and 1: ${randomNumber}`;
+        // You can also use Math.floor() to round down to the nearest integer
+        let roundedNumber = Math.floor(randomNumber * 100); // Random number between 0 and 99
+        output.innerHTML += `<br>Random number between 0 and 99: ${roundedNumber}`;
+        // You can also use Math.ceil() to round up to the nearest integer
+        let roundedUpNumber = Math.ceil(randomNumber * 100); // Random number between 1 and 100
+        output.innerHTML += `<br>Random number between 1 and 100: ${roundedUpNumber}`;
+        // You can also use Math.round() to round to the nearest integer
+        let roundedNearestNumber = Math.round(randomNumber * 100); // Random number between 0 and 100
+        output.innerHTML += `<br>Random number rounded to the nearest integer: ${roundedNearestNumber}`;
+        // You can also use Math.max() and Math.min() to find the maximum and minimum values in an array
+        let numbers = [1, 2, 3, 4, 5];
+        let maxNumber = Math.max(...numbers); // Maximum value
+        let minNumber = Math.min(...numbers); // Minimum value
+        output.innerHTML += `<br>Maximum value in the array is: ${maxNumber}`;
+        output.innerHTML += `<br>Minimum value in the array is: ${minNumber}`;
+        // You can also use Math.abs() to find the absolute value of a number
+        let negativeNumber = -10;
+        let absoluteValue = Math.abs(negativeNumber); // Absolute value
+        output.innerHTML += `<br>Absolute value of ${negativeNumber} is: ${absoluteValue}`;
+        // You can also use Math.sin(), Math.cos(), and Math.tan() to find the sine, cosine, and tangent of an angle in radians
+        let angleInDegrees = 30;
+        let angleInRadians = angleInDegrees * (Math.PI / 180); // Convert degrees to radians
+        let sineValue = Math.sin(angleInRadians); // Sine value
+        let cosineValue = Math.cos(angleInRadians); // Cosine value
+        let tangentValue = Math.tan(angleInRadians); // Tangent value
+        output.innerHTML += `<br>Sine of ${angleInDegrees} degrees is: ${sineValue}`;
+        output.innerHTML += `<br>Cosine of ${angleInDegrees} degrees is: ${cosineValue}`;
+        output.innerHTML += `<br>Tangent of ${angleInDegrees} degrees is: ${tangentValue}`;
+        // You can also use Math.log() to find the natural logarithm of a number
+        let logValue = Math.log(operand1); // Natural logarithm
+        output.innerHTML += `<br>Natural logarithm of ${operand1} is: ${logValue}`;
+        // You can also use Math.exp() to find the exponential value of a number
+
+        //PEDMAS
+        let pedmasResult = (operand1 + operand2) * (operand1 - operand2) / (operand1 + operand2); // PEDMAS
+        output.innerHTML += `<br>Result of PEDMAS operation is: ${pedmasResult}`;
+        // You can also use Math.PI to get the value of pi
+        let piValue = Math.PI; // Value of pi
+        output.innerHTML += `<br>Value of pi is: ${piValue}`;
+        // You can also use Math.E to get the value of e
+
+        
+    </script>
+</body>
+</html>
