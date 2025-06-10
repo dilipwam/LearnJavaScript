@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeScript Crash Course</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f8f9fa; }
+    h1, h2, h3 { color: #3178c6; }
+    code, pre { background: #eef6fb; padding: 2px 6px; border-radius: 4px; }
+    pre { padding: 1em; overflow-x: auto; }
+    .section { margin-bottom: 2em; }
+    hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+    ul { margin-left: 1.5em; }
+  </style>
+</head>
+<body>
+  <h1>🚀 TypeScript Crash Course</h1>
+
+  <div class="section">
+    <h2>🟦 1. What is TypeScript?</h2>
+    <p>
+      TypeScript (TS) is a superset of JavaScript that adds static typing, interfaces, and advanced tooling. It compiles to plain JavaScript.
+    </p>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h2>🧠 2. Key Concepts &amp; Terminologies</h2>
+
+    <h3>🔹 Types</h3>
+    <pre><code>let age: number = 25;
+let name: string = "Alice";
+let isActive: boolean = true;
+</code></pre>
+
+    <h3>🔹 Type Inference</h3>
+    <pre><code>let city = "Delhi"; // inferred as string
+</code></pre>
+
+    <h3>🔹 Interfaces</h3>
+    <pre><code>interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = { name: "Bob", age: 30 };
+</code></pre>
+
+    <h3>🔹 Functions</h3>
+    <pre><code>function greet(name: string): string {
+  return `Hello, ${name}`;
+}
+</code></pre>
+
+    <h3>🔹 Optional &amp; Default Parameters</h3>
+    <pre><code>function log(message: string, user?: string) {
+  console.log(message, user);
+}
+</code></pre>
+
+    <h3>🔹 Arrays &amp; Tuples</h3>
+    <pre><code>let numbers: number[] = [1, 2, 3];
+let tuple: [string, number] = ["age", 30];
+</code></pre>
+
+    <h3>🔹 Union &amp; Literal Types</h3>
+    <pre><code>let value: string | number;
+value = "hello";
+value = 42;
+
+type Direction = "left" | "right";
+let move: Direction = "left";
+</code></pre>
+
+    <h3>🔹 Enums</h3>
+    <pre><code>enum Status {
+  Success,
+  Error,
+  Pending
+}
+let s: Status = Status.Success;
+</code></pre>
+
+    <h3>🔹 Type Aliases</h3>
+    <pre><code>type ID = string | number;
+let userId: ID = 123;
+</code></pre>
+
+    <h3>🔹 Generics</h3>
+    <pre><code>function identity&lt;T&gt;(arg: T): T {
+  return arg;
+}
+let output = identity&lt;string&gt;("test");
+</code></pre>
+
+    <h3>🔹 Classes</h3>
+    <pre><code>class Animal {
+  constructor(public name: string) {}
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+</code></pre>
+
+    <h3>🔹 Access Modifiers</h3>
+    <ul>
+      <li><b>public</b> (default): accessible everywhere</li>
+      <li><b>private</b>: accessible only within the class</li>
+      <li><b>protected</b>: accessible in class and subclasses</li>
+    </ul>
+
+    <h3>🔹 Type Assertions</h3>
+    <pre><code>let someValue: any = "hello";
+let strLength: number = (someValue as string).length;
+</code></pre>
+
+    <h3>🔹 Modules</h3>
+    <pre><code>// file: math.ts
+export function add(a: number, b: number): number {
+  return a + b;
+}
+
+// file: app.ts
+import { add } from "./math";
+</code></pre>
+
+    <h3>🔹 Utility Types</h3>
+    <ul>
+      <li><code>Partial&lt;T&gt;</code>, <code>Readonly&lt;T&gt;</code>, <code>Record&lt;K, T&gt;</code>, <code>Pick&lt;T, K&gt;</code>, <code>Omit&lt;T, K&gt;</code></li>
+    </ul>
+    <pre><code>interface Todo { title: string; done: boolean; }
+let t: Partial&lt;Todo&gt; = { title: "Learn TS" };
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h2>🧩 TypeScript In Practice</h2>
+    <ul>
+      <li>Used for: Large-scale JS apps, safer code, better tooling</li>
+      <li>Integrates with React, Node.js, Angular, Vue</li>
+      <li>Compiles to JavaScript (<code>tsc</code> command)</li>
+      <li>Configuration: <code>tsconfig.json</code></li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h2>✅ Must-Know for Interviews</h2>
+    <ul>
+      <li>Type inference</li>
+      <li>Interfaces vs types</li>
+      <li>Generics</li>
+      <li>Union/intersection types</li>
+      <li>Type narrowing</li>
+      <li>Enums</li>
+      <li>Type assertions</li>
+    </ul>
+  </div>
+
+  <p>
+    Would you like a <b>cheatsheet</b> or a <b>project-based TypeScript tutorial</b> next?
+  </p>
+</body>
+</html>

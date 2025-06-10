@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Test Automation Crash Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Test Automation Crash Course</h1>
+        <h2>Common JavaScript Methods</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>document.querySelector()</td>
+                    <td>Selects the first element that matches a specified CSS selector.</td>
+                    <td>
+                        <pre><code>const element = document.querySelector('.class-name');</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>document.querySelectorAll()</td>
+                    <td>Selects all elements that match a specified CSS selector.</td>
+                    <td>
+                        <pre><code>const elements = document.querySelectorAll('.class-name');</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>element.click()</td>
+                    <td>Simulates a mouse click on an element.</td>
+                    <td>
+                        <pre><code>element.click();</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>element.value</td>
+                    <td>Gets or sets the value of an input element.</td>
+                    <td>
+                        <pre><code>element.value = 'new value';</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>element.innerText</td>
+                    <td>Gets or sets the text content of an element.</td>
+                    <td>
+                        <pre><code>element.innerText = 'new text';</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>element.innerHTML</td>
+                    <td>Gets or sets the HTML content of an element.</td>
+                    <td>
+                        <pre><code>element.innerHTML = '&lt;strong&gt;new HTML&lt;/strong&gt;';</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>element.addEventListener()</td>
+                    <td>Adds an event listener to an element.</td>
+                    <td>
+                        <pre><code>element.addEventListener('click', function() {
+    console.log('Element clicked');
+});</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>setTimeout()</td>
+                    <td>Executes a function after a specified delay.</td>
+                    <td>
+                        <pre><code>setTimeout(function() {
+    console.log('Executed after 2 seconds');
+}, 2000);</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>setInterval()</td>
+                    <td>Executes a function repeatedly at specified intervals.</td>
+                    <td>
+                        <pre><code>setInterval(function() {
+    console.log('Executed every 2 seconds');
+}, 2000);</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>fetch()</td>
+                    <td>Makes an HTTP request and returns a promise.</td>
+                    <td>
+                        <pre><code>fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data));</code></pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>JavaScript Testing Frameworks</h2>
+        <p>Here are some popular JavaScript testing frameworks used in test automation:</p>
+        <ul>
+            <li><strong>Jest</strong>: A delightful JavaScript testing framework with a focus on simplicity.</li>
+            <li><strong>Mocha</strong>: A flexible JavaScript test framework for Node.js.</li>
+            <li><strong>Jasmine</strong>: A behavior-driven development framework for testing JavaScript code.</li>
+            <li><strong>Cypress</strong>: A fast, easy, and reliable testing framework for anything that runs in a browser.</li>
+            <li><strong>Playwright</strong>: A framework for end-to-end testing of web applications.</li>
+        </ul>
+        <h2>Example Test Script</h2>
+        <p>Here's an example of a simple test script using Jest:</p>
+        <pre><code>const { test, expect } = require('@jest/globals');
+
+test('adds 1 + 2 to equal 3', () => {
+    expect(1 + 2).toBe(3);
+});</code></pre>
+    </div>
+</body>
+</html>

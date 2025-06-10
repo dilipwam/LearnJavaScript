@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeScript Crash Course</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f8f9fa; }
+    h1, h2, h3 { color: #3178c6; }
+    code, pre { background: #eef6fb; padding: 2px 6px; border-radius: 4px; }
+    pre { padding: 1em; overflow-x: auto; }
+    .section { margin-bottom: 2em; }
+    hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+    ul { margin-left: 1.5em; }
+    a { color: #3178c6; }
+  </style>
+</head>
+<body>
+  <h1>🚀 TypeScript Crash Course</h1>
+
+  <div class="section">
+    <h2>What is TypeScript?</h2>
+    <p>
+      TypeScript is a <b>superset of JavaScript</b> developed by Microsoft that adds <b>static typing</b> and other features to the language. It helps catch errors early through type checking and improves code readability and maintainability.
+    </p>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h2>Core Concepts and Terminologies</h2>
+    <ol>
+      <li>
+        <b>Types</b>:
+        <ul>
+          <li><b>Primitive Types</b>: <code>string</code>, <code>number</code>, <code>boolean</code>, <code>null</code>, <code>undefined</code>, <code>symbol</code>, <code>bigint</code>.</li>
+          <li><b>Any</b>: A type that can hold any value, used when you don't know the type in advance.</li>
+          <li><b>Union Types</b>: Allows a variable to hold more than one type (e.g., <code>string | number</code>).</li>
+        </ul>
+      </li>
+      <li>
+        <b>Interfaces</b>:
+        <p>Define the shape of an object. They can be used to enforce a structure on objects.</p>
+        <pre><code>interface Person {
+    name: string;
+    age: number;
+}</code></pre>
+      </li>
+      <li>
+        <b>Classes</b>:
+        <p>TypeScript supports object-oriented programming with classes, which can have properties and methods.</p>
+        <pre><code>class Animal {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+    }
+}</code></pre>
+      </li>
+      <li>
+        <b>Generics</b>:
+        <p>Allow you to create reusable components that work with any data type.</p>
+        <pre><code>function identity&lt;T&gt;(arg: T): T {
+    return arg;
+}</code></pre>
+      </li>
+      <li>
+        <b>Enums</b>:
+        <p>A way to define a set of named constants.</p>
+        <pre><code>enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
+}</code></pre>
+      </li>
+      <li>
+        <b>Modules</b>:
+        <p>TypeScript uses ES6 module syntax to organize code into reusable pieces.</p>
+        <pre><code>import { MyClass } from './myModule';</code></pre>
+      </li>
+      <li>
+        <b>Type Assertions</b>:
+        <p>A way to tell the compiler to treat a variable as a different type.</p>
+        <pre><code>let someValue: any = "this is a string";
+let strLength: number = (someValue as string).length;</code></pre>
+      </li>
+      <li>
+        <b>Decorators</b>:
+        <p>Special kind of declaration that can be attached to a class, method, accessor, property, or parameter.</p>
+        <pre><code>function sealed(constructor: Function) {
+    Object.seal(constructor);
+    Object.seal(constructor.prototype);
+}</code></pre>
+      </li>
+    </ol>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h2>Why Learn TypeScript?</h2>
+    <p>
+      TypeScript is widely used in modern web development because it provides <b>static typing</b>, better tooling, and helps prevent common JavaScript errors. It's especially useful if you work with frameworks like <b>React</b>, <b>Angular</b>, or <b>Node.js</b>.
+      <br>
+      References:
+      <a href="https://dev.to/ebereplenty/typescript-crash-course-from-beginner-to-advanced-22dp" target="_blank">[1]</a>
+      <a href="https://www.freecodecamp.org/news/learn-typescript-with-this-crash-course/" target="_blank">[2]</a>
+    </p>
+  </div>
+
+  <p>
+    Feel free to ask if you have any specific questions or need further details on any of these concepts!
+  </p>
+</body>
+</html>

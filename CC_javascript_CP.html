@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Crash Course (Copilot)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; background: #f9f9f9; color: #222; }
+        pre { background: #f4f4f4; padding: 1em; border-radius: 6px; overflow-x: auto; }
+        code { font-family: 'Fira Mono', 'Consolas', monospace; }
+        h2, h3 { color: #2a4d7a; }
+        h3 { margin-top: 2em; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Crash Course</h2>
+
+    <h3>1. Introduction to JavaScript</h3>
+    <p>JavaScript is a lightweight, interpreted programming language primarily used for creating dynamic web content. It is a core technology of the World Wide Web, alongside HTML and CSS.</p>
+
+    <h3>2. Basic Syntax</h3>
+    <ul>
+        <li><strong>Variables</strong>: Used to store data values. Declared using <code>var</code>, <code>let</code>, or <code>const</code>.</li>
+    </ul>
+    <pre><code>let name = "John";
+const age = 30;
+var isStudent = true;
+</code></pre>
+    <ul>
+        <li><strong>Data Types</strong>: Includes numbers, strings, booleans, objects, arrays, null, and undefined.</li>
+    </ul>
+    <pre><code>let number = 42;
+let text = "Hello, World!";
+let isTrue = false;
+let person = { firstName: "John", lastName: "Doe" };
+let colors = ["red", "green", "blue"];
+</code></pre>
+
+    <h3>3. Operators</h3>
+    <ul>
+        <li><strong>Arithmetic Operators</strong>: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></li>
+        <li><strong>Comparison Operators</strong>: <code>==</code>, <code>===</code>, <code>!=</code>, <code>!==</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+        <li><strong>Logical Operators</strong>: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code></li>
+    </ul>
+
+    <h3>4. Control Structures</h3>
+    <ul>
+        <li><strong>Conditional Statements</strong>: <code>if</code>, <code>else if</code>, <code>else</code>, <code>switch</code></li>
+    </ul>
+    <pre><code>if (age > 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}
+</code></pre>
+    <ul>
+        <li><strong>Loops</strong>: <code>for</code>, <code>while</code>, <code>do...while</code>, <code>for...in</code>, <code>for...of</code></li>
+    </ul>
+    <pre><code>for (let i = 0; i &lt; 5; i++) {
+  console.log(i);
+}
+</code></pre>
+
+    <h3>5. Functions</h3>
+    <p>Functions are blocks of code designed to perform a particular task.</p>
+    <pre><code>function greet(name) {
+  return `Hello, ${name}!`;
+}
+console.log(greet("Alice"));
+</code></pre>
+
+    <h3>6. Objects and Arrays</h3>
+    <ul>
+        <li><strong>Objects</strong>: Collections of key-value pairs.</li>
+    </ul>
+    <pre><code>let car = {
+  make: "Toyota",
+  model: "Corolla",
+  year: 2020
+};
+</code></pre>
+    <ul>
+        <li><strong>Arrays</strong>: Ordered lists of values.</li>
+    </ul>
+    <pre><code>let fruits = ["apple", "banana", "cherry"];
+</code></pre>
+
+    <h3>7. Events</h3>
+    <p>JavaScript can respond to user actions like clicks, key presses, and mouse movements.</p>
+    <pre><code>document.getElementById("myButton").addEventListener("click", function() {
+  alert("Button clicked!");
+});
+</code></pre>
+
+    <h3>8. Asynchronous JavaScript</h3>
+    <ul>
+        <li><strong>Callbacks</strong>: Functions passed as arguments to other functions.</li>
+    </ul>
+    <pre><code>function fetchData(callback) {
+  setTimeout(() =&gt; {
+    callback("Data received");
+  }, 1000);
+}
+fetchData((message) =&gt; {
+  console.log(message);
+});
+</code></pre>
+    <ul>
+        <li><strong>Promises</strong>: Objects representing the eventual completion or failure of an asynchronous operation.</li>
+    </ul>
+    <pre><code>let promise = new Promise((resolve, reject) =&gt; {
+  let success = true;
+  if (success) {
+    resolve("Operation successful");
+  } else {
+    reject("Operation failed");
+  }
+});
+promise.then((message) =&gt; {
+  console.log(message);
+}).catch((error) =&gt; {
+  console.error(error);
+});
+</code></pre>
+    <ul>
+        <li><strong>Async/Await</strong>: Syntactic sugar for working with promises.</li>
+    </ul>
+    <pre><code>async function fetchData() {
+  let response = await fetch("https://api.example.com/data");
+  let data = await response.json();
+  console.log(data);
+}
+fetchData();
+</code></pre>
+
+    <h3>9. DOM Manipulation</h3>
+    <p>JavaScript can interact with and manipulate the Document Object Model (DOM) of a webpage.</p>
+    <pre><code>document.getElementById("myElement").innerHTML = "New content";
+</code></pre>
+
+    <h3>10. Error Handling</h3>
+    <ul>
+        <li><strong>Try/Catch</strong>: Handling exceptions in code.</li>
+    </ul>
+    <pre><code>try {
+  let result = riskyOperation();
+} catch (error) {
+  console.error("An error occurred:", error);
+}
+</code></pre>
+
+    <p>This crash course covers the essentials of JavaScript. If you have any specific questions or need further details on any topic, feel free to ask!</p>
+</body>
+</html>

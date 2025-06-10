@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Crash Course</title>
+</head>
+<body>
+
+    <h2>🚀 JavaScript Crash Course</h2>
+
+    <h3>🟨 1. <strong>What is JavaScript?</strong></h3>
+    <p>JavaScript (JS) is a high-level, interpreted scripting language used to create dynamic and interactive web content.</p>
+
+    <hr>
+
+    <h3>🧠 2. <strong>Key Concepts &amp; Terminologies</strong></h3>
+
+    <h4>🔹 Variables</h4>
+    <p>Used to store data values.</p>
+    <pre><code>let name = "John"; // ES6 preferred
+const age = 30;    // Constant
+var city = "Delhi"; // Old (avoid)
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Data Types</h4>
+    <ul>
+        <li><strong>Primitive</strong>: <code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>null</code>, <code>undefined</code>, <code>Symbol</code>, <code>BigInt</code></li>
+        <li><strong>Non-Primitive</strong>: <code>Object</code>, <code>Array</code>, <code>Function</code></li>
+    </ul>
+    <pre><code>let x = 10;           // Number
+let name = "Alice";   // String
+let isCool = true;    // Boolean
+let list = [1, 2, 3]; // Array
+let person = {name: "Bob", age: 25}; // Object
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Operators</h4>
+    <ul>
+        <li>Arithmetic: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></li>
+        <li>Comparison: <code>==</code>, <code>===</code>, <code>!=</code>, <code>!==</code>, <code>&lt;</code>, <code>&gt;</code></li>
+        <li>Logical: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code></li>
+        <li>Assignment: <code>=</code>, <code>+=</code>, <code>-=</code>, etc.</li>
+    </ul>
+
+    <hr>
+
+    <h4>🔹 Conditionals</h4>
+    <pre><code>if (age &gt; 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Loops</h4>
+    <pre><code>for (let i = 0; i &lt; 5; i++) {
+  console.log(i);
+}
+
+while (x &lt; 5) {
+  x++;
+}
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Functions</h4>
+    <p>Reusable blocks of code.</p>
+    <pre><code>function greet(name) {
+  return "Hello " + name;
+}
+</code></pre>
+    <p>➡️ <strong>Arrow Function (ES6):</strong></p>
+    <pre><code>const greet = (name) =&gt; `Hello ${name}`;
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Arrays</h4>
+    <pre><code>let fruits = ["apple", "banana"];
+fruits.push("mango");       // Add
+let first = fruits[0];      // Access
+</code></pre>
+    <p>➡️ <strong>Looping over array:</strong></p>
+    <pre><code>fruits.forEach(f =&gt; console.log(f));
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Objects</h4>
+    <p>Key-value pairs</p>
+    <pre><code>let user = {
+  name: "Sara",
+  age: 22,
+  greet: function() {
+    console.log("Hi!");
+  }
+};
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 DOM Manipulation</h4>
+    <p>JS can manipulate HTML via the DOM.</p>
+    <pre><code>document.getElementById("myBtn").innerText = "Clicked!";
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Events</h4>
+    <p>Reacting to user actions</p>
+    <pre><code>document.querySelector("button").addEventListener("click", () =&gt; {
+  alert("Clicked!");
+});
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Scope</h4>
+    <ul>
+        <li><strong>Global</strong>: Outside all blocks</li>
+        <li><strong>Local</strong>: Inside a function/block</li>
+        <li><strong>Block Scoped</strong>: <code>let</code>, <code>const</code></li>
+    </ul>
+
+    <hr>
+
+    <h4>🔹 Hoisting</h4>
+    <p>Variables and functions are moved to the top of their scope before execution.</p>
+    <pre><code>console.log(a); // undefined
+var a = 10;
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Closures</h4>
+    <p>Functions remember the scope in which they were created.</p>
+    <pre><code>function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    console.log(count);
+  };
+}
+const inc = outer();
+inc(); // 1
+inc(); // 2
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Callbacks &amp; Promises</h4>
+    <p>For async operations.</p>
+    <pre><code>// Callback
+function loadData(cb) {
+  setTimeout(() =&gt; cb("Data loaded"), 1000);
+}
+
+// Promise
+let promise = new Promise((resolve, reject) =&gt; {
+  resolve("Done!");
+});
+
+promise.then(res =&gt; console.log(res));
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Async/Await</h4>
+    <p>Syntactic sugar over Promises</p>
+    <pre><code>async function fetchData() {
+  let result = await fetch("https://api.com");
+  let data = await result.json();
+}
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 Error Handling</h4>
+    <pre><code>try {
+  // risky code
+} catch (err) {
+  console.log("Error:", err);
+}
+</code></pre>
+
+    <hr>
+
+    <h4>🔹 ES6+ Features</h4>
+    <ul>
+        <li><code>let</code>, <code>const</code></li>
+        <li>Arrow functions</li>
+        <li>Template literals: <code>`Hello ${name}`</code></li>
+        <li>Destructuring</li>
+        <li>Spread/rest: <code>...</code></li>
+        <li>Default params</li>
+        <li>Modules: <code>import</code>, <code>export</code></li>
+    </ul>
+
+    <hr>
+
+    <h4>🔹 Classes (OOP)</h4>
+    <pre><code>class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    return `Hi, I’m ${this.name}`;
+  }
+}
+</code></pre>
+
+    <hr>
+
+    <h3>🧩 JavaScript In Practice</h3>
+    <ul>
+        <li>Used for: Web apps, APIs (Node.js), mobile apps (React Native), games, automation</li>
+        <li>Runs in browser or server (Node.js)</li>
+        <li>JS Frameworks: React, Angular, Vue</li>
+        <li>Linting: ESLint, Prettier</li>
+        <li>Package Manager: npm, yarn</li>
+    </ul>
+
+    <hr>
+
+    <h3>✅ Must-Know for Interviews</h3>
+    <ul>
+        <li>Variable scope</li>
+        <li>Hoisting</li>
+        <li>Event loop</li>
+        <li>Promises vs Callbacks</li>
+        <li><code>this</code> keyword</li>
+        <li>Array methods: <code>map</code>, <code>filter</code>, <code>reduce</code></li>
+        <li>Closure</li>
+        <li>Debounce/throttle</li>
+    </ul>
+
+    <hr>
+
+    <p>Would you like a <strong>PDF/cheatsheet</strong> version of this? Or a <strong>project-based tutorial</strong> next?</p>
+
+</body>
+</html>
