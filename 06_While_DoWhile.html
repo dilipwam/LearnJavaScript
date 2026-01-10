@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops 1</title>
+</head>
+<body>
+    <script>
+        // While loop
+        let i = 0;
+        while (i < 5) {
+            console.log("While Loop: " + i);
+            i++;
+        }
+
+        // Do-while loop
+        let j = 0;
+        do {
+            console.log("Do-While Loop: " + j);
+            j++;
+        } while (j < 5);
+
+        // For loop
+        for (let k = 0; k < 5; k++) {
+            console.log("For Loop: " + k);
+        }
+////////////////// Odd or Even Numbers /////////////////////////
+        // Using a while loop to print odd and even numbers from 100 to 0
+        let x = 100;
+        while (x > 0) {
+            if (x % 2 == 0) {
+                console.log(x + " is even.");
+            } else {
+                console.log(x + " is odd.");
+            }
+            x--;
+        }
+
+        // Using a do-while loop to print odd and even numbers from 100 to 0
+        x = 100;
+        do {
+            if (x % 2 == 0) {
+                console.log(x + " is even.");
+            } else {
+                console.log(x + " is odd.");
+            }
+            x--;
+        } while (x > 0);
+
+////////////New Method///////////////////////
+        // Using a while loop to print odd and even numbers from 100 to 0 with a decrement of 3
+        x = 100;
+        while (x > 0) {
+            if (x % 2 == 0) {
+                console.log(x + " is even.");
+            } else {
+                console.log(x + " is odd.");
+            }
+            x = x - 3;
+        }
+
+        // Using a do-while loop to print odd and even numbers from 100 to 0 with a decrement of 3        
+        x = 100;
+        do {
+            if (x % 2 == 0) {
+                console.log(x + " is even.");
+            } else {
+                console.log(x + " is odd.");
+            }
+            x = x - 3;
+        } while (x > 0);
+
+let bands = [10, 20, 30, 40, 50];
+let input = "";
+while (input !== "stop") {
+    input = prompt("Enter a band name (or type 'stop' to finish):");
+
+    if (input !== "stop") {
+        bands.push(input);
+    }
+
+    console.log("Input = " + input);
+    console.log("Bands = " + bands);
+}
+
+console.log("Final Bands = " + bands);
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditionals</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <div id="elseif"></div>
+
+    <div id="DrinkingAge"></div>
+    <script>
+        let age = prompt("How old Are You ?"); // Example age
+
+        if (age >= 21) {
+            document.getElementById("DrinkingAge").innerHTML = "You are old enough to drink alcohol.";
+        } else {
+            document.getElementById("DrinkingAge").innerHTML = "You are not old enough to drink alcohol.";
+        }
+
+let number = prompt("enter a +/-ve number"); // Example number
+
+        // If-else statement
+        if (number > 0) {
+            document.getElementById("elseif").innerHTML = `${number} is positive.`;
+        } else if (number < 0) {
+            document.getElementById("elseif").innerHTML = `${number} is negative.`;
+        } else {
+            document.getElementById("elseif").innerHTML = `${number} is zero.`;
+        }
+
+        // Switch statement
+        let day = prompt("Enter number of the Week-day"); // Example day (1-7)
+
+        switch (day) {
+            case 1:
+                document.getElementById("output").innerHTML += "<br>Monday";
+                break;
+            case 2:
+                document.getElementById("output").innerHTML += "<br>Tuesday";
+                break;
+            case 3:
+                document.getElementById("output").innerHTML += "<br>Wednesday";
+                break;
+            case 4:
+                document.getElementById("output").innerHTML += "<br>Thursday";
+                break;
+            case 5:
+                document.getElementById("output").innerHTML += "<br>Friday";
+                break;
+            case 6:
+                document.getElementById("output").innerHTML += "<br>Saturday";
+                break;
+            case 7:
+                document.getElementById("output").innerHTML += "<br>Sunday";
+                break;
+            default:
+                document.getElementById("output").innerHTML += "<br>Invalid day";
+        }
+    </script>
+    
+    <div id="EligibleToVote"></div>
+    <script>
+        let citizen = prompt("Are you a citizen? (yes/no)"); // Example citizen status
+        let age1 = prompt("How old are you?"); // Example age
+
+        if (citizen.toLowerCase() === "yes" && age1 >= 18) {
+            document.getElementById("EligibleToVote").innerHTML = "You are eligible to vote.";
+        } else {
+            document.getElementById("EligibleToVote").innerHTML = "You are not eligible to vote.";
+        }
+        </script>
+
+        <div id="phebonacci"></div>\
+        <script>
+            let n = prompt("Enter a number to find its Fibonacci sequence:"); // Example number
+            let a = 0, b = 1, c;
+            let fibonacciSequence = `${a} ${b}`; // Initialize with the first two Fibonacci numbers
+
+            for (let i = 2; i < n; i++) {
+                c = a + b;
+                fibonacciSequence += ` ${c}`;
+                a = b;
+                b = c;
+            }
+
+            document.getElementById("phebonacci").innerHTML = `Fibonacci sequence up to ${n} terms: ${fibonacciSequence}`;
+        </script>
+
+
+</body>
+</html>

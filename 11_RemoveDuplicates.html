@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+
+    
+    
+
+          <script>
+//Step 1 - remove Spaces from the string 
+//Step 2 - Remove duplicate letters from the string, not case sensitive 
+
+let input = prompt("Enter a String to Remove Spaces and Duplicates: ");
+
+if (input) {
+    let strWithoutSpaces = removeSpaces(input);
+    let strWithoutDuplicates = removeDuplicates(strWithoutSpaces);
+    let strWithoutDuplicates2 = removeDuplicates2(strWithoutSpaces);
+    console.log("String without spaces and duplicates: " + strWithoutDuplicates);
+        console.log("String without spaces and duplicates case insensitive: " + strWithoutDuplicates2);
+} else {
+    console.log("No input provided.");
+}
+
+
+function removeSpaces(input) {
+    return input.replace(/\s+/g, '');
+}
+
+function removeDuplicates(input) {
+    let output = '';
+    let len = input.length;
+    for (let i = 0; i < len; i++) {
+        if (output.indexOf(input[i]) === -1) {
+            output += input[i];
+        }
+    }
+    return output;
+}
+
+
+function removeDuplicates2(input) {
+    let output = '';
+    let loweroutput = '';
+    let len = input.length;
+    for (let i = 0; i < len; i++) {
+        if (loweroutput.indexOf(input[i].toLowerCase()) === -1) {
+            loweroutput += input[i].toLowerCase();
+            output += input[i];
+        }
+    }
+    return output;
+}
+
+
+
+// let bands = [10, 20, 30, 40, 50];
+// let input = "";
+// while (input !== "stop") {
+//     input = prompt("Enter a band name (or type 'stop' to finish):");
+
+//     if (input !== "stop") {
+//         bands.push(input);
+//     }
+
+//     console.log("Input = " + input);
+//     console.log("Bands = " + bands);
+// }
+
+// console.log("Final Bands = " + bands);
+
+
+</script>
+    
+</body>
+</html>

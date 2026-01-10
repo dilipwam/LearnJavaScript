@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crash Course: Common TypeScript Methods for Test Automation</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f8f9fa; }
+    h2, h3 { color: #3178c6; }
+    code, pre { background: #eef6fb; padding: 2px 6px; border-radius: 4px; }
+    pre { padding: 1em; overflow-x: auto; }
+    hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+    ul { margin-left: 1.5em; }
+    .section { margin-bottom: 2em; }
+    table { border-collapse: collapse; margin: 1em 0; }
+    th, td { border: 1px solid #ccc; padding: 0.5em 1em; }
+    th { background: #eef6fb; }
+  </style>
+</head>
+<body>
+  <h2>🚀 Crash Course on Common TypeScript Methods &amp; Concepts Used in Test Automation</h2>
+  <p>Focus: <b>Playwright</b>, <b>Cypress</b>, <b>Jest</b>, <b>WebDriverIO</b> — using <b>TypeScript</b> for type safety and maintainability.</p>
+  <hr>
+
+  <div class="section">
+    <h3>🔰 1. Basic TypeScript Setup for Test Automation</h3>
+    <p><b>tsconfig.json (simplified)</b></p>
+    <pre><code>{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "types": ["jest", "node", "cypress"]
+  }
+}
+</code></pre>
+    <p>Use <code>.ts</code> instead of <code>.js</code> for your test files.</p>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>✅ 2. Typed Test Functions (e.g., Jest / Playwright)</h3>
+    <pre><code>test("check dashboard", async () => {
+  const url: string = await page.url();
+  expect(url).toContain("dashboard");
+});
+</code></pre>
+    <p>You get <b>auto-complete &amp; type checking</b> on objects like <code>page</code>, <code>browser</code>, etc., from Playwright’s types.</p>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🔎 3. Typing Web Elements</h3>
+    <p><b>Playwright:</b></p>
+    <pre><code>const button: Locator = page.locator("#submit");
+await button.click();
+</code></pre>
+    <p><b>Cypress:</b></p>
+    <pre><code>cy.get('input[name="username"]') // auto-completion for commands
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🔁 4. Common TS-enhanced JS Methods Used in Tests</h3>
+    <p><b>Array Methods</b></p>
+    <pre><code>const users: string[] = ["Alice", "Bob"];
+users.forEach((u: string) => {
+  expect(u).toMatch(/\w+/);
+});
+</code></pre>
+    <p><b>Object Iteration</b></p>
+    <pre><code>type User = { name: string; isAdmin: boolean };
+const userObj: Record&lt;string, User&gt; = {
+  user1: { name: "Alice", isAdmin: true },
+  user2: { name: "Bob", isAdmin: false },
+};
+
+Object.entries(userObj).forEach(([key, val]) => {
+  expect(typeof val.name).toBe("string");
+});
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>💥 5. Advanced TypeScript in Test Automation</h3>
+    <p><b>Interfaces for Test Data</b></p>
+    <pre><code>interface LoginDetails {
+  username: string;
+  password: string;
+}
+
+const credentials: LoginDetails = {
+  username: "admin",
+  password: "admin123",
+};
+</code></pre>
+    <p><b>Enums for Roles or States</b></p>
+    <pre><code>enum Role {
+  Admin = "admin",
+  User = "user",
+}
+
+function loginAs(role: Role) {
+  // logic based on role
+}
+</code></pre>
+    <p><b>Generics for Reusable Functions</b></p>
+    <pre><code>function getElementText&lt;T extends HTMLElement&gt;(selector: string): Promise&lt;string&gt; {
+  return document.querySelector(selector)?.textContent ?? "";
+}
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>⌛ 6. Async-Await with Type Inference</h3>
+    <pre><code>const url: string = await page.url(); // ensures return type is string
+</code></pre>
+    <p><b>Incorrect:</b></p>
+    <pre><code>const url: string = page.url(); // ❌ Type 'Promise&lt;string&gt;' is not assignable to type 'string'
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🧪 7. Type-safe Custom Commands</h3>
+    <p><b>Cypress Example</b></p>
+    <pre><code>declare global {
+  namespace Cypress {
+    interface Chainable {
+      login(username: string, password: string): Chainable&lt;void&gt;;
+    }
+  }
+}
+
+Cypress.Commands.add("login", (username, password) => {
+  cy.get("#username").type(username);
+  cy.get("#password").type(password);
+  cy.get("#login").click();
+});
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🧰 8. Reusable Test Utility Types</h3>
+    <pre><code>type TestUser = {
+  id: number;
+  name: string;
+  isActive: boolean;
+};
+
+const mockUser: TestUser = {
+  id: 1,
+  name: "Dilip",
+  isActive: true,
+};
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>⚙️ 9. Fixtures &amp; Type-safe Data</h3>
+    <pre><code>import users from "../fixtures/users.json"; // with typing
+type User = typeof users[0];
+
+const firstUser: User = users[0];
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🧪 10. Real Test Example (Playwright + TypeScript)</h3>
+    <pre><code>import { test, expect, Page } from '@playwright/test';
+
+test('valid login', async ({ page }: { page: Page }) => {
+  await page.goto("https://example.com/login");
+  await page.fill("#username", "admin");
+  await page.fill("#password", "admin123");
+  await page.click("text=Login");
+
+  const url: string = await page.url();
+  expect(url).toContain("/dashboard");
+});
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>📚 BONUS: Utility Functions in TypeScript for Test Automation</h3>
+    <pre><code>export function generateRandomEmail(): string {
+  return `user_${Math.random().toString(36).substring(2)}@mail.com`;
+}
+
+export function delay(ms: number): Promise&lt;void&gt; {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🧠 Summary</h3>
+    <table>
+      <tr>
+        <th>Concept</th>
+        <th>Why It Matters in Testing</th>
+      </tr>
+      <tr>
+        <td><code>interface</code>, <code>type</code></td>
+        <td>Define data models for test data</td>
+      </tr>
+      <tr>
+        <td><code>Promise&lt;T&gt;</code></td>
+        <td>Enforce correct async behavior</td>
+      </tr>
+      <tr>
+        <td><code>Record&lt;K, V&gt;</code></td>
+        <td>Map dynamic test data</td>
+      </tr>
+      <tr>
+        <td><code>Enum</code></td>
+        <td>Role/status flags</td>
+      </tr>
+      <tr>
+        <td><code>Generics</code></td>
+        <td>Flexible utilities</td>
+      </tr>
+      <tr>
+        <td><code>readonly</code>, <code>Partial</code>, <code>Pick</code>, <code>Omit</code></td>
+        <td>Fine-tune types for mock data</td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+
+  <p>
+    Would you like this as a <b>PDF cheat sheet</b>, <b>Notion doc</b>, or visual <b>carousel format</b> for sharing or internal training?
+  </p>
+</body>
+</html>

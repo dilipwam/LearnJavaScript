@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript vs TypeScript Crash Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript vs TypeScript Crash Course</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Concept</th>
+                    <th>JavaScript</th>
+                    <th>TypeScript</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Basic Definition</td>
+                    <td>A dynamic, interpreted programming language primarily used for web development.</td>
+                    <td>A statically typed superset of JavaScript that compiles to plain JavaScript.</td>
+                </tr>
+                <tr>
+                    <td>Typing</td>
+                    <td>Dynamically typed. Types are determined at runtime.</td>
+                    <td>Statically typed. Types are checked at compile time.</td>
+                </tr>
+                <tr>
+                    <td>Compilation</td>
+                    <td>Interpreted by the browser or Node.js at runtime.</td>
+                    <td>Compiled to JavaScript using the TypeScript compiler (`tsc`).</td>
+                </tr>
+                <tr>
+                    <td>Syntax and Features</td>
+                    <td>
+                        Supports ES6+ features like classes, arrow functions, and template literals.<br>
+                        <pre><code>class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    greet() {
+        console.log(`Hello, ${this.name}`);
+    }
+}</code></pre>
+                    </td>
+                    <td>
+                        Includes all JavaScript features plus additional features like interfaces, enums, and generics.<br>
+                        <pre><code>interface Person {
+    name: string;
+    greet(): void;
+}
+
+class Student implements Person {
+    constructor(public name: string) {}
+    greet() {
+        console.log(`Hello, ${this.name}`);
+    }
+}</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Error Checking</td>
+                    <td>Errors are typically found at runtime.</td>
+                    <td>Errors are caught at compile time, reducing runtime errors.</td>
+                </tr>
+                <tr>
+                    <td>Tooling and IDE Support</td>
+                    <td>Good support in most IDEs and text editors.</td>
+                    <td>Excellent support with features like IntelliSense, code navigation, and refactoring tools.</td>
+                </tr>
+                <tr>
+                    <td>Use Cases</td>
+                    <td>Ideal for small to medium-sized projects, quick prototyping, and dynamic web applications.</td>
+                    <td>Best for large-scale applications, projects with multiple developers, and codebases that require maintainability and scalability.</td>
+                </tr>
+                <tr>
+                    <td>Community and Ecosystem</td>
+                    <td>Vast ecosystem with numerous libraries and frameworks (e.g., React, Angular, Vue.js).</td>
+                    <td>Growing ecosystem with strong support from frameworks like Angular and libraries like React (with TypeScript support).</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Summary</h2>
+        <p><strong>JavaScript</strong> is flexible and easy to start with, making it great for quick development and smaller projects.</p>
+        <p><strong>TypeScript</strong> provides a more robust development experience with static typing, making it suitable for larger, more complex projects.</p>
+    </div>
+</body>
+</html>

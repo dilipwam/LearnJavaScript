@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=scri, initial-scale=1.0">
+    <title>For Loop</title>
+</head>
+<body>
+    <script>
+        // Sleep function using Promise
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // For loop to print odd and even numbers from 100 to 0 with a decrement of 3
+        for (let x = 100; x > 0; x -= 3) {
+            if (x % 2 == 0) {
+                console.log(x + " is even.");
+            } else {
+                console.log(x + " is odd.");
+            }
+        }
+
+        // Infinite loop with for...
+        for (let i = 0; i < 5; i--) {
+                console.log("This is Infinite Loop: " + i);
+                 // Sleep for 100 milliseconds
+
+                 if (i < -25) {
+                    break; // Break the loop if i is less than 0
+                 }
+            }
+
+        // Infinite loop with sleep (fixed to avoid infinite execution)
+        (async function() {
+            for (let i = 0; i < 5; i--) {
+                console.log("This will pause for 1000ms: " + i);
+                await sleep(1000); // Sleep for 100 milliseconds
+            }
+        })();
+
+    </script>
+</body>
+</html>

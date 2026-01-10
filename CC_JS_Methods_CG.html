@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crash Course: Common JavaScript Methods for Test Automation</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f8f9fa; }
+    h2, h3 { color: #3178c6; }
+    code, pre { background: #eef6fb; padding: 2px 6px; border-radius: 4px; }
+    pre { padding: 1em; overflow-x: auto; }
+    hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+    ul { margin-left: 1.5em; }
+    .section { margin-bottom: 2em; }
+  </style>
+</head>
+<body>
+  <h2>🚀 Crash Course on Common JavaScript Methods Used in Test Automation</h2>
+  <p>Especially useful for tools like <b>Cypress</b>, <b>Playwright</b>, <b>Selenium (WebDriverJS)</b>, and <b>Jest</b>.</p>
+  <hr>
+
+  <div class="section">
+    <h3>🧪 1. Assertions</h3>
+    <p>Used to verify expected results.</p>
+    <pre><code>// Jest / Mocha / Chai
+expect(value).toBe(10);
+expect(arr).toContain("apple");
+assert.equal(actual, expected);
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🔁 2. Looping Constructs</h3>
+    <p>Used for testing data-driven or repetitive steps.</p>
+    <pre><code>for (let i = 0; i &lt; items.length; i++) {
+  console.log(items[i]);
+}
+
+items.forEach((item) =&gt; {
+  expect(item).toBeDefined();
+});
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🔍 3. Array Methods</h3>
+    <p><code>map()</code>, <code>filter()</code>, <code>find()</code>, <code>every()</code>, <code>some()</code>, <code>includes()</code></p>
+    <pre><code>let names = users.map(u =&gt; u.name);
+let valid = users.filter(u =&gt; u.isActive);
+let found = users.find(u =&gt; u.id === 1);
+expect(names.includes("Alice")).toBe(true);
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🔤 4. String Methods</h3>
+    <pre><code>let str = "Automation Test";
+
+expect(str.toLowerCase()).toBe("automation test");
+expect(str.includes("Test")).toBe(true);
+expect(str.replace("Test", "Script")).toBe("Automation Script");
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>📦 5. Object Handling</h3>
+    <p><code>Object.keys()</code>, <code>Object.values()</code>, <code>hasOwnProperty()</code></p>
+    <pre><code>let obj = { a: 1, b: 2 };
+expect(Object.keys(obj)).toContain("a");
+expect(obj.hasOwnProperty("b")).toBe(true);
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>⌛ 6. Timers &amp; Async Handling</h3>
+    <pre><code>// Wait for element / action
+await page.waitForSelector('#submit');
+await new Promise(resolve =&gt; setTimeout(resolve, 1000));
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>📄 7. DOM &amp; Browser Actions (with frameworks)</h3>
+    <b>Cypress</b>
+    <pre><code>cy.get('#username').type('admin');
+cy.contains('Submit').click();
+cy.url().should('include', '/dashboard');
+</code></pre>
+    <b>Playwright</b>
+    <pre><code>await page.fill('#username', 'admin');
+await page.click('text=Submit');
+await expect(page).toHaveURL(/dashboard/);
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>📁 8. File &amp; Data Handling</h3>
+    <pre><code>const fs = require('fs');
+
+let raw = fs.readFileSync('data.json');
+let data = JSON.parse(raw);
+
+expect(data.users.length).toBeGreaterThan(0);
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>📐 9. Test Setup &amp; Teardown</h3>
+    <pre><code>beforeAll(() =&gt; initBrowser());
+afterAll(() =&gt; closeBrowser());
+beforeEach(() =&gt; resetState());
+afterEach(() =&gt; cleanUp());
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🎯 10. Mocking &amp; Spying</h3>
+    <pre><code>jest.spyOn(api, 'getUser').mockReturnValue({ name: 'John' });
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>📌 11. Common Utility Functions</h3>
+    <ul>
+      <li><b>Deep Equality</b>: <code>JSON.stringify(obj1) === JSON.stringify(obj2)</code></li>
+      <li><b>Generate Random Data</b>:</li>
+    </ul>
+    <pre><code>const randomStr = Math.random().toString(36).substring(2);
+const timestamp = Date.now();
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>✅ Example Test Snippet (Jest + Puppeteer)</h3>
+    <pre><code>test("login flow", async () =&gt; {
+  await page.goto("https://example.com/login");
+  await page.type("#user", "admin");
+  await page.type("#pass", "admin123");
+  await page.click("#submit");
+
+  await page.waitForSelector("#dashboard");
+  const url = await page.url();
+  expect(url).toMatch(/dashboard/);
+});
+</code></pre>
+  </div>
+  <hr>
+
+  <div class="section">
+    <h3>🚀 Bonus: Debugging Tips</h3>
+    <pre><code>console.log("value:", value);
+debugger; // triggers dev tools if supported
+</code></pre>
+  </div>
+  <hr>
+
+  <p>
+    Would you like this content converted into a <b>cheat sheet PDF</b>, <b>Notion doc</b>, or <b>LinkedIn carousel</b>?
+  </p>
+</body>
+</html>
